@@ -1,6 +1,8 @@
-import Stripe from 'stripe';
+import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', { apiVersion: '2023-10-16' });
+export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: "2023-10-16"
+});
 
 export async function chargeUser(): Promise<string> {
   // For demo/test, creates a PaymentIntent with test payment method
